@@ -1,5 +1,3 @@
-﻿# quantitative-trading
-
 # Quantitative Trading Research 📈
 
 A hybrid research environment for quantitative finance, combining **Python** for data acquisition and **MATLAB** for mathematical modeling and optimization.
@@ -26,4 +24,4 @@ A hybrid research environment for quantitative finance, combining **Python** for
 3.  Execute MATLAB scripts to perform comparative analysis on the shared datasets.
 
 ---
-*Developed as part of my quantitative research at Aarhus University.*
+
