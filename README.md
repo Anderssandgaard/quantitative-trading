@@ -1,6 +1,6 @@
 # Quantitative Trading Research 📈
 
-A hybrid research environment for quantitative finance, combining **Python** for data acquisition and **MATLAB** for mathematical modeling and optimization.
+Test research environment for quantitative tranding in **Python** and **MATLAB**.
 
 ## 📂 Project Structure
 * `python_research/`: Data scraping (yfinance), signal processing, and machine learning.
@@ -24,4 +24,5 @@ A hybrid research environment for quantitative finance, combining **Python** for
 3.  Execute MATLAB scripts to perform comparative analysis on the shared datasets.
 
 ---
+
 
