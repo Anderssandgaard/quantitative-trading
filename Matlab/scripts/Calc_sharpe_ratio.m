@@ -1,15 +1,18 @@
-%% Download data from Yahoo
-addpath(genpath('utils'))
+%% calculate shape ratio
+addpath(genpath(cd))
 %% Anders Dyhr Sandgaard
-clc
+clear
 % Example Call: Fetching AMD stock data
-symbol = 'AAPL';
-start_dt = '1-Feb-2010';
-end_dt = '7-Feb-2026'; % Today
-interval = '1d';
+symbol = 'IGE';
+start_dt = '26-Feb-2024';
+end_dt = '14-Nov-2025'; 
+interval = '1h';% typical options: '1m', '2m', '5m', '15m', , '1h', '1d'
 try
     amdData = getMarketDataViaYahoo(symbol, start_dt, end_dt, interval);
-    
+    if isempty(amdData)
+        error('Data does not exist. modify interval and/or date')
+        return
+    end
     % Display the first few rows
     disp('Successfully retrieved data:')
     head(amdData)
@@ -22,16 +25,10 @@ try
     xlabel('Date');
     ylabel('Closing Price (USD)');
     
+    %Annualized Sharpe ratio
+    results = sharpe_ratio_all(amdData.AdjClose, amdData.Date)  
 catch ME
     fprintf('Error: %s\n', ME.message);
 end
-%%
-
-
-figure, % note the Quandl returns inaccurate date
-% subplot(2,1,1), plot(aaplusd_yahoo);
-plot(aaplusd_yahoo);
-legend({'Close', 'High', 'Low'},'Location', 'northwest');
-disp(aaplusd_yahoo_raw.Close)
 
 

@@ -39,8 +39,8 @@ function data = getMarketDataViaYahoo(symbol, startdate, enddate, interval)
         q = res.indicators.quote;
         
         % Extract prices
-        O = q.open(t <= enddate)'; H = q.high(t <= enddate)';
-        L = q.low(t <= enddate)'; C = q.close(t <= enddate)'; V = q.volume(t <= enddate)';
+        O = q.open(t <= enddate)'; H = q.high(t <= enddate);
+        L = q.low(t <= enddate)'; C = q.close(t <= enddate); V = q.volume(t <= enddate)';
         t = t(t <= enddate);
         % AdjClose is sometimes in a nested struct
         if isfield(res.indicators, 'adjclose')
