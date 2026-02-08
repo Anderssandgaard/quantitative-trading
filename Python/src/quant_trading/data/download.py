@@ -7,7 +7,7 @@ def GetMarketDataYahoo(symbols, start_dt, end_dt, interval):
 
     # You can download all at once in one line!
     print(">> Fetching data...")
-    data = yf.download(symbols, start=start_dt, end=end_dt, group_by='ticker')
+    data = yf.download(symbols, start=start_dt, end=end_dt, group_by='ticker', interval=interval)
     
     for symbol in symbols:
         print(f"\n--- {symbol} ---")

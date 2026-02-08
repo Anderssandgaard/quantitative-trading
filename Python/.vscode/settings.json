@@ -2,7 +2,6 @@
     "python-envs.defaultEnvManager": "ms-python.python:conda",
     "python-envs.defaultPackageManager": "ms-python.python:conda",
     "python-envs.pythonProjects": [],
-    "python.analysis.extraPaths": [
-        "./utils"
-    ]
+  "python.analysis.extraPaths": ["./src"],
+  "python.defaultInterpreterPath": "C:/Users/espg/anaconda3/envs/env1/python.exe"    
 }

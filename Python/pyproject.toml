@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "quant-trading"
+version = "0.1.0"
+dependencies = [
+    "numpy",
+    "pandas",
+    "matplotlib",
+    "yfinance"
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
