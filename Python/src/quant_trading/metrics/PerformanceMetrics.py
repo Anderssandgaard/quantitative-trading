@@ -1,6 +1,8 @@
 # %%
+from xml.parsers.expat import model
 import pandas as pd
 import numpy as np
+import statsmodels.api as sm
 # %%
 def CalcSharpeRatio(data, price_col='Close'):
     """
@@ -153,6 +155,15 @@ def CalcMaxdrawdur(cumreturns):
     return max_drawdown, max_duration, wealth_index, drawdowns, mdd_date
 
 
+def CalcHedgeratio(data1, data2):
+ 
+    # Fit the OLS regression model
+    model = sm.OLS(data1, data2).fit();
+    hedgeRatio = model.params.iloc[0]
+    return hedgeRatio
 
-
-
+def Calcspread(data1, data2,hedgeRatio):
+ 
+    spread = data1 - hedgeRatio * data2;
+   
+    return spread

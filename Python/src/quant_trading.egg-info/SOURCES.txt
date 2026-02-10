@@ -1,6 +1,5 @@
 pyproject.toml
 src/__init__.py
-src/quant_trading/__init__.py
 src/quant_trading.egg-info/PKG-INFO
 src/quant_trading.egg-info/SOURCES.txt
 src/quant_trading.egg-info/dependency_links.txt
@@ -12,4 +11,6 @@ src/quant_trading/data/download.py
 src/quant_trading/metrics/PerformanceMetrics.py
 src/quant_trading/metrics/__init__.py
 src/quant_trading/strategies/__init__.py
+src/quant_trading/strategies/run_pairs_strategy.py
 src/quant_trading/vizualization/__init__.py
+src/quant_trading/vizualization/showmetrics.py

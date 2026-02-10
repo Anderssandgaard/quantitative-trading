@@ -3,7 +3,9 @@ from quant_trading.data.download import GetMarketDataYahoo
 from quant_trading.vizualization.showmetrics import show_CalcMaxdrawdur
 from quant_trading.metrics.PerformanceMetrics import CalcSharpeRatio, CalcSharpeRatioHedge, CalcMaxdrawdur
 import matplotlib.pyplot as plt
-
+import pandas as pd
+import statsmodels.api as sm
+import numpy as np
 # %%
 symbols  = ['IGE','SPY']
 start_dt = '2001-11-26' 
@@ -39,36 +41,3 @@ max_drawdown, max_drawdown_duration, wealth_index, drawdowns, mdd_date = CalcMax
 print(f"Max Drawdown: {max_drawdown:.4f}, Max Drawdown Duration: {max_drawdown_duration} periods", f"Date of MDD: {mdd_date.date()}")
 # Show the max drawdown and duration visually
 show_CalcMaxdrawdur(cumreturns, max_drawdown, max_drawdown_duration, mdd_date, wealth_index, drawdowns)
-
-# %%
-
-
-
-
-
-
-
-# %%
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
