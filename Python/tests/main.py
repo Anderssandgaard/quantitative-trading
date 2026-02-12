@@ -41,8 +41,6 @@ max_drawdown, max_drawdown_duration, wealth_index, drawdowns, mdd_date = CalcMax
 print(f"Max Drawdown: {max_drawdown:.4f}, Max Drawdown Duration: {max_drawdown_duration} periods", f"Date of MDD: {mdd_date.date()}")
 # Show the max drawdown and duration visually
 show_CalcMaxdrawdur(cumreturns, max_drawdown, max_drawdown_duration, mdd_date, wealth_index, drawdowns)
-<<<<<<< HEAD
-
 # %% Pair trading example with GLD and GDX 
 from quant_trading.metrics.PerformanceMetrics import CalcHedgeratio, Calcspread
 
@@ -141,36 +139,3 @@ plt.grid(True)
 plt.legend()
 plt.show()
 # %%
-
-
-
-
-
-
-
-# %%
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-=======
->>>>>>> 18f731c (Meaningful change)
