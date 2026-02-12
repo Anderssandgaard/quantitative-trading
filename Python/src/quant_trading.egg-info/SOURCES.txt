@@ -8,6 +8,7 @@ src/quant_trading.egg-info/top_level.txt
 src/quant_trading/backtest/__init__.py
 src/quant_trading/data/__init__.py
 src/quant_trading/data/download.py
+src/quant_trading/data/load_excel.py
 src/quant_trading/metrics/PerformanceMetrics.py
 src/quant_trading/metrics/__init__.py
 src/quant_trading/strategies/__init__.py

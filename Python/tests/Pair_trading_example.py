@@ -1,11 +1,11 @@
 # %%
-from quant_trading.data.load_excel import load_excel
+from quant_trading.data.load_data import load_excel
 from quant_trading.strategies.run_pairs_strategy  import run_pairs_strategy
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 
-# % Pair trading example with GLD and GDX 
+# %% Pair trading example with GLD and GDX 
 df1 = load_excel("GLD.xls")
 df2 = load_excel("GDX.xls")
 # Merge dataframes on Date
@@ -60,3 +60,25 @@ plt.xlabel('Days')
 plt.grid(True)
 plt.legend()
 plt.show()
+# %%
+
+startDate = 20060101
+endDate=20061231
+df = pd.read_table('C:\\Users\\espg\\Documents\\GitHub\\quantitative-trading\\data\\SPX_20071123.txt')
+df['Date'] = df['Date'].astype(int) # Convert Date to integer
+df.set_index('Date', inplace=True) # Set Date as index
+df.sort_index(inplace=True) # Sort by Date
+# %%
+
+daily_returns = df.pct_change() # Calculate daily returns
+marketDailyReturns = daily_returns.mean(axis=1) # Average across all stocks to get market return
+weights = - (np.array(daily_returns)-np.array(marketDailyReturns).reshape((daily_returns.shape[0], 1))) # Calculate weights as negative of excess returns
+wtsum = np.nansum(abs(weights), axis=1) # Sum of absolute weights for normalization
+weights[wtsum == 0,]=0 # Avoid division by zero
+wtsum[wtsum == 0] = 1   # Set sum to 1 where it was zero to prevent division by zero
+
+weights = weights / wtsum.reshape((daily_returns.shape[0], 1)) # Normalize weights
+dailypnl = np.nansum(np.array(pd.DataFrame(weights).shift()) * np.array(daily_returns), axis=1) # Calculate daily PnL
+dailypnl = dailypnl[np.logical_and(df.index >= startDate, df.index <= endDate)] # Filter by date range
+sharperatio = np.mean(dailypnl) / np.std(dailypnl) * np.sqrt(252) # Annualized Sharpe Ratio
+print(f"Annualized Sharpe Ratio: {sharperatio:.4f}")
