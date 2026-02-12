@@ -1,8 +1,9 @@
 # Quantitative Trading Research 📈
 
-Test research environment for quantitative tranding in **Python** and **MATLAB**.
+Test research environment for quantitative trading in **Python** and **MATLAB**.
 
 
 ---
+
 
 
