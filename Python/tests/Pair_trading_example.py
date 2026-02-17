@@ -1,19 +1,13 @@
 # %%
-<<<<<<< HEAD
 from quant_trading.data.load_data import load_excel
-=======
 from quant_trading.data.load_excel import load_excel
->>>>>>> 18f731c854db396daaeaf75461f10dab49a853c8
 from quant_trading.strategies.run_pairs_strategy  import run_pairs_strategy
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 
-<<<<<<< HEAD
-# %% Pair trading example with GLD and GDX 
 =======
 # % Pair trading example with GLD and GDX 
->>>>>>> 18f731c854db396daaeaf75461f10dab49a853c8
 df1 = load_excel("GLD.xls")
 df2 = load_excel("GDX.xls")
 # Merge dataframes on Date
@@ -92,4 +86,3 @@ dailypnl = dailypnl[np.logical_and(df.index >= startDate, df.index <= endDate)] 
 sharperatio = np.mean(dailypnl) / np.std(dailypnl) * np.sqrt(252) # Annualized Sharpe Ratio
 print(f"Annualized Sharpe Ratio: {sharperatio:.4f}")
 =======
->>>>>>> 18f731c854db396daaeaf75461f10dab49a853c8
